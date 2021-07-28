@@ -8,6 +8,7 @@ poetry install
 ```
 
 # Usage
+You need to have aws cli installed and configured.
 Create .env file with variables mentioned in script:
 ```bash
 cat << EOF > .env

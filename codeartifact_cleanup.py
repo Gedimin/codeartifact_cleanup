@@ -10,7 +10,12 @@ format_artifact = os.environ['format_artifact']
 domain_owner = os.environ['domain_owner']
 artifact_status_to_delete = os.environ['artifact_status_to_delete']
 
+# By default boto3 uses default profile of aws cli credentials
 client = boto3.client('codeartifact')
+
+# #  To change default profile of aws cli the following construction is used
+# session = boto3.Session(profile_name='my_user')
+# client = session.client('codeartifact')
 
 def list_packages(domain, domainOwner, repository, format):
     response = client.list_packages(
@@ -36,7 +41,7 @@ def list_package_versions(domain, domainOwner, repository, format, namespace, pa
     )
 
     return response["versions"]
-    
+
 def delete_package_versions(domain, domainOwner, repository, format, namespace, package, list):
     response = client.delete_package_versions(
         domain=domain,
