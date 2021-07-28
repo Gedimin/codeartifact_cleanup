@@ -2,7 +2,7 @@
 Script to cleaning up CodeArtifact from old packages
 
 # Dependencies:
-Modules `boto3` will be instaled.
+Module `boto3` will be instaled.
 ```bash
 poetry install
 ```
