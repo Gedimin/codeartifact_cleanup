@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "codeartifact-cleanup"
+version = "0.1.0"
+description = ""
+authors = ["Aliaksei Anikiyenka <aliaksei_anikiyenka@epam.com>"]
+readme = "README.md"
+packages = [{include = "codeartifact_cleanup"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+boto3 = "^1.18.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
