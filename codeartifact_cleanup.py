@@ -1,12 +1,16 @@
 import boto3
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+domain_name = os.environ['domain_name']
+repository_name = os.environ['repository_name']
+format_artifact = os.environ['format_artifact']
+domain_owner = os.environ['domain_owner']
+artifact_status_to_delete = os.environ['artifact_status_to_delete']
 
 client = boto3.client('codeartifact')
-
-domain_name = 'test'
-repository_name = 'test_repo'
-format_artifact = 'maven'
-domain_owner = '123456789123'
-artifact_status_to_delete = 'Unlisted'
 
 def list_packages(domain, domainOwner, repository, format):
     response = client.list_packages(
